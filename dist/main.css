@@ -138,7 +138,12 @@ nav {
 nav.active {
   display: block;
   height: 10000vh;
-  padding-top: 2rem;
+  padding-top: 15%;
+}
+
+nav.active ul li {
+  font-size: 1.75rem;
+  line-height: 2.5rem;
 }
 
 #nav_toggle {
@@ -195,12 +200,21 @@ input[type="checkbox"] {
   display: none;
 }
 
+header {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 header .logo {
   width: 13rem;
 }
 
-header .inner_content {
-  margin-top: 1.25rem;
+h1 {
+  font-size: 2rem;
+  line-height: 2.3rem;
+  text-transform: lowercase;
+  -webkit-text-decoration: underline dashed #f7a28b;
+          text-decoration: underline dashed #f7a28b;
 }
 
 body {
@@ -209,8 +223,20 @@ body {
   font-weight: 300;
 }
 
+body.no_scroll {
+  overflow: hidden;
+}
+
 .inner_content {
   width: 90%;
   margin: 0 auto;
+}
+
+.inner_content.boxed_content {
+  background-color: #fee8db;
+  border: 2px solid #243347;
+  padding: 5%;
+  -webkit-box-shadow: 0.5rem 0.75rem #e3efe5;
+          box-shadow: 0.5rem 0.75rem #e3efe5;
 }
 /*# sourceMappingURL=main.css.map */

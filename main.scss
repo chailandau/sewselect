@@ -5,10 +5,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap");
 
 // Colors
-$white: #fff6f1;
+$bg: #fff6f1;
+$box_bg: #fee8db;
+$box_border: #243347;
+$box_shadow: #e3efe5;
+$underline: #f7a28b;
 
-// Fonts
+// Fonts & sizes
 $font: "Work Sans", sans-serif;
+$mobile_nav: 1.75rem;
+$mobile_nav_lh: 2.5rem;
+$h1: 2rem;
+$h1_lh: 2.3rem;
 
 // Skip link
 .skip_to_main_content {
@@ -31,7 +39,13 @@ nav {
   &.active {
     display: block;
     height: 10000vh;
-    padding-top: 2rem;
+    padding-top: 15%;
+    ul {
+      li {
+        font-size: $mobile_nav;
+        line-height: $mobile_nav_lh;
+      }
+    }
   }
 }
 #nav_toggle {
@@ -90,23 +104,38 @@ input[type="checkbox"] {
 
 // Header styles
 header {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
   .logo {
     width: 13rem;
   }
-  .inner_content {
-    margin-top: 1.25rem;
-  }
+}
+
+// Header styles
+h1 {
+  font-size: $h1;
+  line-height: $h1_lh;
+  text-transform: lowercase;
+  text-decoration: underline dashed $underline;
 }
 
 // Body styles
-
 body {
-  background-color: $white;
+  background-color: $bg;
   font-family: $font;
   font-weight: 300;
+  &.no_scroll {
+    overflow: hidden;
+  }
 }
 
 .inner_content {
   width: 90%;
   margin: 0 auto;
+  &.boxed_content {
+    background-color: $box_bg;
+    border: 2px solid $box_border;
+    padding: 5%;
+    box-shadow: 0.5rem 0.75rem $box_shadow;
+  }
 }
