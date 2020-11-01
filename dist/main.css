@@ -148,7 +148,7 @@ nav.active ul li {
 
 #nav_toggle {
   display: block;
-  position: fixed;
+  position: absolute;
   z-index: 2;
   top: 22px;
   right: 0;
@@ -162,7 +162,7 @@ nav.active ul li {
 #nav_toggle span, #nav_toggle span:before, #nav_toggle span:after {
   height: 2px;
   width: 33px;
-  background: #007b94;
+  background: #243347;
   position: absolute;
   display: block;
   content: "";
@@ -201,26 +201,52 @@ input[type="checkbox"] {
 }
 
 header {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  padding: 1.25rem 0;
+  width: 100%;
 }
 
 header .logo {
   width: 13rem;
 }
 
+header.scrolled {
+  position: fixed;
+  background-color: #fff6f1;
+  border-bottom: 2px solid #243347;
+  -webkit-box-shadow: 0px 5px 15px rgba(248, 148, 130, 0.35);
+          box-shadow: 0px 5px 15px rgba(248, 148, 130, 0.35);
+  z-index: 2;
+  padding: 0.6rem 0;
+}
+
+header.scrolled #nav_toggle {
+  top: 12px;
+}
+
 h1 {
   font-size: 2rem;
-  line-height: 2.3rem;
+  line-height: 2.45rem;
+  font-weight: 300;
   text-transform: lowercase;
-  -webkit-text-decoration: underline dashed #f7a28b;
-          text-decoration: underline dashed #f7a28b;
+  display: inline;
+  padding-bottom: 4px;
+  background: repeating-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 7px, #fff6f1 7px, #fff6f1 14px), linear-gradient(to top, rgba(255, 0, 0, 0) 5px, #f7a28b 5px, #f7a28b 7px, rgba(255, 0, 0, 0) 7px);
+}
+
+.title {
+  margin: 2rem 0 1.25rem 0;
 }
 
 body {
   background-color: #fff6f1;
   font-family: "Work Sans", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
+  font-size: 1.1rem;
+  line-height: 1.35rem;
+}
+
+body.scrolled main {
+  padding-top: 75px;
 }
 
 body.no_scroll {
@@ -235,8 +261,37 @@ body.no_scroll {
 .inner_content.boxed_content {
   background-color: #fee8db;
   border: 2px solid #243347;
-  padding: 5%;
+  padding: 1.5rem;
   -webkit-box-shadow: 0.5rem 0.75rem #e3efe5;
           box-shadow: 0.5rem 0.75rem #e3efe5;
+}
+
+.inner_content.boxed_content .title {
+  margin-top: -0.5rem;
+}
+
+.inner_content.boxed_content h1 {
+  background: repeating-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 7px, #fee8db 7px, #fee8db 14px), linear-gradient(to top, rgba(255, 0, 0, 0) 5px, #f7a28b 5px, #f7a28b 7px, rgba(255, 0, 0, 0) 7px);
+}
+
+#select_category h1 {
+  margin-top: 3rem;
+}
+
+ol.steps {
+  counter-reset: step_counter;
+}
+
+ol.steps > li {
+  position: relative;
+  margin-left: 4.55rem;
+  margin-top: 1rem;
+}
+
+ol.steps > li:before {
+  content: "Step " counter(step_counter) ": ";
+  counter-increment: step_counter;
+  position: absolute;
+  left: -4.55rem;
 }
 /*# sourceMappingURL=main.css.map */

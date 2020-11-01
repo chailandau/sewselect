@@ -16,7 +16,9 @@ $font: "Work Sans", sans-serif;
 $mobile_nav: 1.75rem;
 $mobile_nav_lh: 2.5rem;
 $h1: 2rem;
-$h1_lh: 2.3rem;
+$h1_lh: 2.45rem;
+$body: 1.1rem;
+$body_lh: 1.35rem;
 
 // Skip link
 .skip_to_main_content {
@@ -50,7 +52,7 @@ nav {
 }
 #nav_toggle {
   display: block;
-  position: fixed;
+  position: absolute;
   z-index: 2;
   top: 22px;
   right: 0;
@@ -65,7 +67,7 @@ nav {
     &:after {
       height: 2px;
       width: 33px;
-      background: #007b94;
+      background: $box_border;
       position: absolute;
       display: block;
       content: "";
@@ -104,10 +106,22 @@ input[type="checkbox"] {
 
 // Header styles
 header {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+  padding: 1.25rem 0;
+  width: 100%;
   .logo {
     width: 13rem;
+  }
+  // Fixed header
+  &.scrolled {
+    position: fixed;
+    background-color: $bg;
+    border-bottom: 2px solid $box_border;
+    box-shadow: 0px 5px 15px rgba(248, 148, 130, 0.35);
+    z-index: 2;
+    padding: 0.6rem 0;
+    #nav_toggle {
+      top: 12px;
+    }
   }
 }
 
@@ -115,15 +129,44 @@ header {
 h1 {
   font-size: $h1;
   line-height: $h1_lh;
+  font-weight: 300;
   text-transform: lowercase;
-  text-decoration: underline dashed $underline;
+  display: inline;
+  padding-bottom: 4px;
+  background:
+        // make the underline dashed
+    repeating-linear-gradient(
+      to right,
+      rgba(255, 255, 255, 0),
+      rgba(255, 255, 255, 0) 7px,
+      $bg 7px,
+      $bg 14px
+    ),
+    // draw the underline
+    linear-gradient(
+        to top,
+        rgba(255, 0, 0, 0) 5px,
+        $underline 5px,
+        $underline 7px,
+        rgba(255, 0, 0, 0) 7px
+      );
+}
+.title {
+  margin: 2rem 0 1.25rem 0;
 }
 
 // Body styles
 body {
   background-color: $bg;
   font-family: $font;
-  font-weight: 300;
+  font-weight: 400;
+  font-size: $body;
+  line-height: $body_lh;
+  &.scrolled {
+    main {
+      padding-top: 75px;
+    }
+  }
   &.no_scroll {
     overflow: hidden;
   }
@@ -135,7 +178,51 @@ body {
   &.boxed_content {
     background-color: $box_bg;
     border: 2px solid $box_border;
-    padding: 5%;
+    padding: 1.5rem;
     box-shadow: 0.5rem 0.75rem $box_shadow;
+    .title {
+      margin-top: -0.5rem;
+    }
+    h1 {
+      background:
+        // make the underline dashed
+        repeating-linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0) 7px,
+          $box_bg 7px,
+          $box_bg 14px
+        ),
+        // draw the underline
+        linear-gradient(
+            to top,
+            rgba(255, 0, 0, 0) 5px,
+            $underline 5px,
+            $underline 7px,
+            rgba(255, 0, 0, 0) 7px
+          );
+    }
+  }
+}
+
+#select_category {
+  h1 {
+    margin-top: 3rem;
+  }
+}
+
+// Style list to include "Step X:"
+ol.steps {
+  counter-reset: step_counter;
+  & > li {
+    position: relative;
+    margin-left: 4.55rem;
+    margin-top: 1rem;
+    &:before {
+      content: "Step " counter(step_counter) ": ";
+      counter-increment: step_counter;
+      position: absolute;
+      left: -4.55rem;
+    }
   }
 }
