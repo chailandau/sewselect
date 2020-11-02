@@ -1,24 +1,11 @@
 // Reset default styles
 @import "reset";
 
+// Import variables
+@import "variables";
+
 // Import fonts
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap");
-
-// Colors
-$bg: #fff6f1;
-$box_bg: #fee8db;
-$box_border: #243347;
-$box_shadow: #e3efe5;
-$underline: #f7a28b;
-
-// Fonts & sizes
-$font: "Work Sans", sans-serif;
-$mobile_nav: 1.75rem;
-$mobile_nav_lh: 2.5rem;
-$h1: 2rem;
-$h1_lh: 2.45rem;
-$body: 1.1rem;
-$body_lh: 1.35rem;
 
 // Skip link
 .skip_to_main_content {
@@ -67,7 +54,7 @@ nav {
     &:after {
       height: 2px;
       width: 33px;
-      background: $box_border;
+      background: $dark_blue;
       position: absolute;
       display: block;
       content: "";
@@ -75,10 +62,10 @@ nav {
       transition: all 300ms ease-in-out;
     }
     &:before {
-      top: -10px;
+      top: -9.5px;
     }
     &:after {
-      bottom: -10px;
+      bottom: -9.6px;
     }
   }
   &.active {
@@ -114,8 +101,8 @@ header {
   // Fixed header
   &.scrolled {
     position: fixed;
-    background-color: $bg;
-    border-bottom: 2px solid $box_border;
+    background-color: $white;
+    border-bottom: 2px solid $dark_blue;
     box-shadow: 0px 5px 15px rgba(248, 148, 130, 0.35);
     z-index: 2;
     padding: 0.6rem 0;
@@ -139,17 +126,22 @@ h1 {
       to right,
       rgba(255, 255, 255, 0),
       rgba(255, 255, 255, 0) 7px,
-      $bg 7px,
-      $bg 14px
+      $white 7px,
+      $white 14px
     ),
     // draw the underline
     linear-gradient(
         to top,
         rgba(255, 0, 0, 0) 5px,
-        $underline 5px,
-        $underline 7px,
+        $md_pink 5px,
+        $md_pink 7px,
         rgba(255, 0, 0, 0) 7px
       );
+}
+h2 {
+  text-transform: lowercase;
+  font-size: $h2;
+  line-height: $h2_lh;
 }
 .title {
   margin: 2rem 0 1.25rem 0;
@@ -157,8 +149,8 @@ h1 {
 
 // Body styles
 body {
-  background-color: $bg;
-  font-family: $font;
+  background-color: $white;
+  font-family: $global_font;
   font-weight: 400;
   font-size: $body;
   line-height: $body_lh;
@@ -176,10 +168,11 @@ body {
   width: 90%;
   margin: 0 auto;
   &.boxed_content {
-    background-color: $box_bg;
-    border: 2px solid $box_border;
+    background-color: $light_pink;
+    border: 2px solid $dark_blue;
     padding: 1.5rem;
-    box-shadow: 0.5rem 0.75rem $box_shadow;
+    box-shadow: 0.5rem 0.75rem $light_green;
+    margin-top: 1rem;
     .title {
       margin-top: -0.5rem;
     }
@@ -190,24 +183,18 @@ body {
           to right,
           rgba(255, 255, 255, 0),
           rgba(255, 255, 255, 0) 7px,
-          $box_bg 7px,
-          $box_bg 14px
+          $light_pink 7px,
+          $light_pink 14px
         ),
         // draw the underline
         linear-gradient(
             to top,
             rgba(255, 0, 0, 0) 5px,
-            $underline 5px,
-            $underline 7px,
+            $md_pink 5px,
+            $md_pink 7px,
             rgba(255, 0, 0, 0) 7px
           );
     }
-  }
-}
-
-#select_category {
-  h1 {
-    margin-top: 3rem;
   }
 }
 
@@ -225,4 +212,43 @@ ol.steps {
       left: -4.55rem;
     }
   }
+}
+
+#select_category {
+  margin-top: 3rem;
+  h1 {
+    margin-top: 3rem;
+  }
+  h2 {
+    margin-bottom: -3.5rem;
+  }
+  .fabric,
+  .patterns {
+    margin-top: 3.5rem;
+  }
+}
+
+// Category icons
+.category_icon {
+  margin: 0 auto;
+  text-align: center;
+  width: 14rem;
+  height: 14rem;
+  background-color: $light_pink;
+  border: 2px solid $dark_blue;
+  border-radius: 100%;
+  box-shadow: 0.5rem 0.75rem $light_green;
+  img {
+    width: 9rem;
+    margin-top: 2.5rem;
+  }
+}
+
+// Footer styles
+footer {
+  background-color: $light_pink;
+  padding: 1rem 0;
+  text-transform: lowercase;
+  border-top: 2px solid $dark_blue;
+  margin-top: 3rem;
 }
