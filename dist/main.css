@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400&display=swap");
 *,
 *:before,
@@ -223,6 +224,7 @@ header.scrolled #nav_toggle {
 }
 
 h1 {
+  color: #000000;
   font-size: 2rem;
   line-height: 2.45rem;
   font-weight: 300;
@@ -239,7 +241,7 @@ h2 {
 }
 
 .title {
-  margin: 2rem 0 1.25rem 0;
+  margin: 1.25rem 0;
 }
 
 body {
@@ -340,6 +342,60 @@ ol.steps > li:before {
 
 .category_icon h2 {
   display: inline-block;
+}
+
+.fabric_swatch_container {
+  margin: 3rem auto;
+  text-align: center;
+}
+
+.fabric_swatch_container a {
+  text-decoration: none;
+  color: #000000;
+}
+
+.fabric_swatch_container a:hover h2 {
+  background: repeating-linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0) 7px, #fff6f1 7px, #fff6f1 14px), linear-gradient(to top, rgba(255, 0, 0, 0) 5px, #f7a28b 5px, #f7a28b 7px, rgba(255, 0, 0, 0) 7px);
+}
+
+.fabric_swatch_container a h2 {
+  margin: 0.5rem 0 1rem 0;
+  font-weight: 300;
+  display: inline-block;
+}
+
+.fabric_swatch_container .fabric_swatch img {
+  width: 14rem;
+  height: 14rem;
+  border-radius: 100%;
+  background-color: #243347;
+  border: 2px solid #243347;
+}
+
+.fabric_inner img {
+  width: 100%;
+  margin-top: 0.75rem;
+  border: 2px solid #243347;
+  background-color: #243347;
+}
+
+.fabric_inner h2 {
+  margin: 1rem 0 0.5rem 0;
+  font-weight: 300;
+}
+
+.fabric_inner ul {
+  padding-left: 1rem;
+  font-weight: 300;
+}
+
+.fabric_inner ul li {
+  margin-bottom: 0.5rem;
+}
+
+.fabric_inner ul li:before {
+  content: "›";
+  margin-right: 0.5rem;
 }
 
 footer {

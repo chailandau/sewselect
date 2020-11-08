@@ -140,6 +140,7 @@ header {
 
 // Header styles
 h1 {
+  color: $black;
   font-size: $h1;
   line-height: $h1_lh;
   font-weight: 300;
@@ -170,7 +171,7 @@ h2 {
   line-height: $h2_lh;
 }
 .title {
-  margin: 2rem 0 1.25rem 0;
+  margin: 1.25rem 0;
 }
 
 // Body styles
@@ -296,6 +297,74 @@ ol.steps {
   }
   h2 {
     display: inline-block;
+  }
+}
+
+.fabric_swatch_container {
+  a {
+    text-decoration: none;
+    color: $black;
+    &:hover {
+      h2 {
+        background:
+      // make the underline dashed
+          repeating-linear-gradient(
+            to right,
+            rgba(255, 255, 255, 0),
+            rgba(255, 255, 255, 0) 7px,
+            $white 7px,
+            $white 14px
+          ),
+          // draw the underline
+          linear-gradient(
+              to top,
+              rgba(255, 0, 0, 0) 5px,
+              $md_pink 5px,
+              $md_pink 7px,
+              rgba(255, 0, 0, 0) 7px
+            );
+      }
+    }
+    h2 {
+      margin: 0.5rem 0 1rem 0;
+      font-weight: 300;
+      display: inline-block;
+    }
+  }
+  margin: 3rem auto;
+  text-align: center;
+  .fabric_swatch {
+    img {
+      width: 14rem;
+      height: 14rem;
+      border-radius: 100%;
+      background-color: $dark_blue;
+      border: 2px solid $dark_blue;
+    }
+  }
+}
+
+.fabric_inner {
+  img {
+    width: 100%;
+    margin-top: 0.75rem;
+    border: 2px solid $dark_blue;
+    background-color: $dark_blue;
+  }
+  h2 {
+    margin: 1rem 0 0.5rem 0;
+    font-weight: 300;
+  }
+  ul {
+    padding-left: 1rem;
+    font-weight: 300;
+    li {
+      margin-bottom: 0.5rem;
+      &:before {
+        content: "›";
+        margin-right: 0.5rem;
+      }
+    }
   }
 }
 
